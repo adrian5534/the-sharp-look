@@ -2,8 +2,8 @@ import React, { useEffect } from 'react'
 import './App.css'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import routes from './routes/routes.jsx'
-import Navbar from './components/navbar.jsx'
-import Footer from './components/footer.jsx'
+import Navbar from './components/Navbar.jsx'
+import Footer from './components/Footer.jsx'
 
 // Optional: updates document.title from route meta
 function MetaUpdater({ routes }) {
