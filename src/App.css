@@ -1,0 +1,13 @@
+/* App shell only; page/component styles live alongside their components */
+.App {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
+}
+
+/* Main area grows to push footer down */
+.App-main {
+  flex: 1 1 auto;
+}

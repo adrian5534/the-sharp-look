@@ -1,0 +1,210 @@
+/* Page */
+.services-page .page-title { font-weight: 800; color: var(--color-text); }
+
+/* Filter/Search bar */
+.filter-bar {
+  background: var(--color-accent);
+  border-radius: 12px;
+  padding: 0.75rem;
+  color: var(--color-white);
+}
+.filter-row {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 0.75rem;
+  align-items: center;
+}
+.search-wrap { position: relative; }
+.search-icon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6c7b8c;
+}
+.search-input {
+  padding-left: 2.2rem;
+  border-radius: 10px;
+  border: 1px solid #e6e6e6;
+}
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Chips (custom, not Bootstrap .btn) */
+.chip {
+  --chip-border: rgba(255,255,255,0.8);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0.75rem;
+  border: 2px solid var(--chip-border);
+  border-radius: 999px;
+  color: var(--color-white);
+  background: transparent;
+  font-weight: 600;
+  line-height: 1;
+  transition: background-color .2s ease, border-color .2s ease, color .2s ease, box-shadow .2s ease;
+}
+.chip:hover { background: rgba(255,255,255,0.08); border-color: var(--color-white); }
+.chip-dark { background: rgba(0,0,0,0.2); border-color: rgba(0,0,0,0.2); }
+
+/* Sidebar categories */
+.category-card {
+  background: #fff;
+  border: 1px solid #e7e7e7;
+  border-radius: 12px;
+  padding: 0.75rem;
+}
+.category-head { font-weight: 700; margin-bottom: 0.5rem; }
+.category-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.25rem;
+}
+.category-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.5rem 0.6rem;
+  border-radius: 8px;
+  color: var(--color-text);
+  text-decoration: none;
+}
+.category-link:hover { background: #f4f4f4; }
+.count {
+  background: var(--color-secondary);
+  border: 1px solid #e2e2e2;
+  border-radius: 999px;
+  padding: 0.05rem 0.45rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+/* Equal-height grid helpers for Bootstrap rows */
+.row-eq > [class*="col-"] { display: flex; }
+.row-eq > [class*="col-"] > .service-card,
+.row-eq > [class*="col-"] > .addon-card { flex: 1; }
+
+/* Cards */
+.service-card, .addon-card {
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.service-title { font-size: 1rem; margin: 0; }
+.icon-badge {
+  width: 34px; height: 34px;
+  display: grid; place-items: center;
+  border-radius: 8px;
+  background: var(--color-secondary);
+  color: var(--color-accent);
+}
+.icon-badge svg { width: 18px; height: 18px; }
+.price {
+  background: var(--color-secondary);
+  border: 1px solid #e2e2e2;
+  border-radius: 999px;
+  padding: 0.25rem 0.5rem;
+  font-weight: 700;
+}
+.service-desc { color: #666; margin: 0.5rem 0 0.75rem; }
+
+/* Meta pills */
+.pill, .pill-soft {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  padding: 0.35rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid #e1e1e1;
+  background: #fff;
+  font-size: 0.9rem;
+}
+.pill-soft { background: #f6f7f8; border-color: #e7e7e7; }
+
+/* Ensure bottom actions align */
+.card-actions { margin-top: auto; }
+
+/* Add-on badge */
+.addon-badge {
+  background: var(--color-secondary);
+  border: 1px solid #e2e2e2;
+  color: #555;
+  border-radius: 999px;
+  padding: 0.1rem 0.45rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+/* Compact add-on variant + normalization so Add buttons align */
+.addon-card { padding: 0.75rem; }
+.addon-card .icon-badge { width: 30px; height: 30px; }
+.addon-card .service-title { font-size: 0.95rem; }
+.addon-card .service-desc {
+  margin: 0.35rem 0 0.6rem;
+  font-size: 0.92rem;
+  min-height: 3.25rem; /* reserve ~2 lines */
+}
+.addon-card .meta-pills { min-height: 2rem; }
+.addon-card .pill, .addon-card .pill-soft {
+  padding: 0.25rem 0.45rem;
+  font-size: 0.85rem;
+}
+
+/* Buttons (custom, not Bootstrap .btn) */
+.btn-cta, .btn-ghost {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.6rem 0.9rem; border-radius: 10px; font-weight: 700;
+  text-decoration: none; transition: background-color .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+.btn-cta {
+  background: var(--color-cta);
+  color: #111;
+  border: 2px solid var(--color-cta);
+}
+.btn-cta:hover { background: #b28f2f; border-color: #b28f2f; color: #111; }
+.btn-ghost {
+  background: transparent; color: var(--color-white);
+  border: 2px solid rgba(255,255,255,0.85);
+}
+.btn-ghost:hover { background: rgba(255,255,255,0.08); border-color: var(--color-white); color: var(--color-white); }
+
+/* Compact ghost for add-ons on light cards */
+.btn-sm { padding: 0.45rem 0.75rem; border-radius: 10px; font-weight: 700; }
+.addon-card .btn-ghost { color: var(--color-accent); border-color: var(--color-accent); }
+.addon-card .btn-ghost:hover { background: rgba(58,80,107,0.08); border-color: var(--color-accent); color: var(--color-accent); }
+
+/* Quick book callout */
+.quick-book .quick-book-inner {
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .filter-row { grid-template-columns: 1fr auto; }
+  .chip-dark { justify-self: end; }
+}
+@media (max-width: 768px) {
+  .filter-row { grid-template-columns: 1fr; }
+  .chip-row { order: 3; }
+  .chip-dark { order: 2; justify-self: start; }
+  .quick-book .quick-book-inner { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 576px) {
+  .filter-bar { padding: 0.6rem; }
+  .service-card, .addon-card { padding: 0.85rem; }
+  .addon-card { padding: 0.65rem; }
+}

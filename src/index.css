@@ -1,0 +1,67 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* Brand tokens + Bootstrap mappings */
+:root {
+  --color-primary: #111111;   /* Onyx Black */
+  --color-secondary: #F5F5F5; /* Silver Gray */
+  --color-text: #333333;      /* Charcoal */
+  --color-accent: #3A506B;    /* Steel Blue */
+  --color-cta: #CBA135;       /* Antique Gold */
+  --color-white: #ffffff;
+
+  --bs-body-font-family: 'Inter', sans-serif;
+  --bs-body-color: var(--color-text);
+  --bs-body-bg: var(--color-secondary);
+
+  --bs-primary: var(--color-cta);
+  --bs-secondary: var(--color-accent);
+  --bs-dark: var(--color-primary);
+  --bs-light: var(--color-secondary);
+
+  --bs-link-color: var(--color-accent);
+  --bs-link-hover-color: #4b6284;
+
+  color-scheme: light;
+}
+
+/* Base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--bs-body-font-family);
+  color: var(--bs-body-color);
+  background-color: var(--bs-body-bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Essentials */
+a {
+  color: var(--bs-link-color);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--bs-link-hover-color);
+  text-decoration: underline;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}

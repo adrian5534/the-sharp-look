@@ -1,0 +1,76 @@
+.contact-band {
+  display:flex; align-items:center; justify-content:space-between; gap:1rem;
+  color:#fff; background: var(--color-primary, #111);
+  border-radius:12px; padding:1rem 1.25rem; margin-bottom:1rem;
+}
+.band-title { margin:0; font-weight:800; }
+.band-sub { margin:0; opacity:.9; }
+.chip { display:inline-flex; align-items:center; gap:.5rem; padding:.55rem .8rem; border-radius:999px; border:2px solid rgba(255,255,255,.25); color:#fff; text-decoration:none; font-weight:700; }
+.chip-dark { background: rgba(255,255,255,.08); }
+
+/* Panels */
+.panel { background:#fff; border:1px solid #e9e9e9; border-radius:12px; padding: .85rem; }
+.panel-head { font-weight:800; margin-bottom:.5rem; }
+.contact-panel .panel-head { margin-bottom:.5rem; }
+
+.form-control {
+  width:100%; border:1px solid #e2e2e2; border-radius:10px; padding:.6rem .7rem;
+  outline:none; transition:border-color .15s;
+}
+.form-control:focus { border-color:#bbb; }
+textarea.form-control { resize:vertical; }
+
+.muted-hint { font-size:.85rem; color:#6b7280; margin-top:.25rem; }
+.muted-hint.err { color:#b00020; }
+
+/* Footer row */
+.contact-form-footer {
+  margin-top:.6rem; display:flex; align-items:center; justify-content:space-between; gap:.75rem; flex-wrap:wrap;
+}
+.badges { display:flex; gap:.5rem; align-items:center; }
+.badge {
+  display:inline-flex; align-items:center; padding:.25rem .5rem; border-radius:999px;
+  background:#f1f5f9; color:#334155; font-weight:700; font-size:.8rem; border:1px solid #e2e8f0;
+}
+
+/* Info list + hours */
+.info-list { display:flex; flex-direction:column; gap:.5rem; margin-bottom:.5rem; }
+.info-field {
+  display:flex; align-items:center; border:1px solid #e6e6e6; border-radius:10px; padding:.55rem .65rem;
+  text-decoration:none; color:inherit; background:#fff;
+}
+.info-field:hover { background:#f8f8f8; }
+
+.hours-head { font-weight:700; margin:.25rem 0 .35rem; }
+.hour-grid {
+  display:grid; grid-template-columns:repeat(2,1fr); gap:.4rem;
+}
+.hour-cell {
+  border:1px solid #e6e6e6; border-radius:10px; padding:.5rem .6rem; background:#fff;
+}
+.hour-cell .small { font-size:.8rem; color:#64748b; }
+.hour-cell .b { font-weight:700; }
+
+/* Buttons (reuse global styles if present) */
+.btn-cta, .btn-ghost {
+  display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
+  padding:.55rem .85rem; border-radius:10px; font-weight:700; text-decoration:none;
+  border:2px solid #111; transition:.15s;
+}
+.btn-cta { background:#111; color:#fff; border-color:#111; }
+.btn-cta:disabled { opacity:.7; cursor:not-allowed; }
+.btn-ghost { background:transparent; color:#111; }
+.btn-ghost:hover { background:#f4f4f4; }
+
+.w-100 { width:100%; }
+.mt-2 { margin-top:.5rem; }
+
+/* Map */
+.map-wrap {
+  margin-top:1rem; background:#fff; border:1px solid #e9e9e9; border-radius:12px; overflow:hidden;
+}
+.map-wrap iframe { width:100%; height:380px; border:0; display:block; }
+
+@media (max-width:768px){
+  .hour-grid { grid-template-columns:1fr 1fr; }
+}

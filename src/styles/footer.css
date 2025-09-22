@@ -1,0 +1,77 @@
+/* Footer uses Bootstrap grid/utilities + custom brand styling. */
+.site-footer {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* Brand */
+.brand-icon {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  color: var(--color-cta);
+}
+.brand-icon svg { width: 100%; height: 100%; }
+.brand-blurb { color: rgba(255,255,255,0.8); }
+
+/* Links on dark background */
+.site-footer a {
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+}
+.site-footer a:hover { color: var(--color-cta); }
+
+/* Chips (custom, not Bootstrap .btn) */
+.chip {
+  --chip-border: rgba(255,255,255,0.6);
+  padding: 0.55rem 0.9rem;
+  border: 2px solid var(--chip-border);
+  border-radius: 999px;
+  color: var(--color-white);
+  background: transparent;
+  font-weight: 600;
+  line-height: 1;
+  transition: background-color .2s ease, border-color .2s ease, color .2s ease, box-shadow .2s ease;
+}
+.chip svg { width: 18px; height: 18px; }
+.chip:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: var(--color-white);
+}
+.chip:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(203,161,53,0.45);
+  border-color: var(--color-cta);
+}
+
+/* Hours list */
+.hours-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.4rem;
+}
+.hours-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  color: rgba(255,255,255,0.8);
+}
+.hours-link { color: var(--color-cta); }
+.hours-link:hover { text-decoration: underline; }
+
+/* Divider */
+.footer-divider {
+  border: 0;
+  border-top: 1px solid rgba(255,255,255,0.14);
+}
+
+/* Credits color */
+.footer-credits { color: rgba(255,255,255,0.75); }
+
+/* Mobile tweaks (Bootstrap handles most responsiveness) */
+@media (max-width: 576px) {
+  .hours-list li { gap: 0.75rem; }
+}
