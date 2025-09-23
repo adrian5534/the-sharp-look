@@ -1,21 +1,26 @@
-import { FiSearch, FiFilter, FiTag, FiScissors, FiSlash, FiDroplet, FiWind, FiLayers, FiThermometer } from 'react-icons/fi'
+import { FiSearch, FiFilter, FiTag, FiScissors, FiSlash, FiDroplet, FiWind, FiLayers } from 'react-icons/fi'
+import { LuSprayCan } from 'react-icons/lu';
+import { TbBlade, TbScissors  } from 'react-icons/tb';
+import { GiTowel, GiBeard, GiHeartBottle } from 'react-icons/gi';
+import { SiKingstontechnology } from 'react-icons/si';
+import { PiMaskHappyFill, PiTowelDuotone } from 'react-icons/pi';
 import ServiceCard from '../components/ServiceCard.jsx'
 import '../styles/service.css'
 
 export default function Services() {
   const featured = [
-    { icon: FiScissors, title: 'Classic Cut', price: 30, desc: 'Clean, timeless haircut with precise finish. Includes style.', duration: '30 min', tags: ['Clipper & Shears'], barber: 'Any' },
-    { icon: FiSlash, title: 'Skin Fade', price: 40, desc: 'Ultra-clean fade with razor detailing for a sharp profile.', duration: '45 min', tags: ['Razor Detail'], barber: 'Senior' },
-    { icon: FiDroplet, title: 'Hot Towel Shave', price: 35, desc: 'Traditional shave, hot towels, rich lather, close finish.', duration: '30 min', tags: ['Straight Razor'], barber: 'Any' },
-    { icon: FiWind, title: 'Beard Shape & Line-Up', price: 25, desc: 'Define lines, trim length, and condition for balance.', duration: '20 min', tags: ['Beard Oil'], barber: 'Any' },
-    { icon: FiThermometer, title: 'Scalp Treatment', price: 28, desc: 'Deep cleanse and rejuvenation for a healthier scalp.', duration: '20 min', tags: ['Cooling Massage'], barber: 'Any' },
-    { icon: FiLayers, title: 'The Sharp Package', price: 65, desc: 'Cut + Beard + Hot Towel Shave. Complete refresh.', duration: '75 min', tags: ['Bundle'], barber: 'Senior' },
+    { icon: TbScissors, title: 'Classic Cut', price: 30, desc: 'Clean, timeless haircut with precise finish. Includes style.', duration: '30 min', tags: ['Clipper & Shears'], barber: 'Any' },
+    { icon: SiKingstontechnology, title: 'Skin Fade', price: 40, desc: 'Ultra-clean fade with razor detailing for a sharp profile.', duration: '45 min', tags: ['Razor Detail'], barber: 'Senior' },
+    { icon: GiTowel, title: 'Hot Towel Shave', price: 35, desc: 'Traditional shave, hot towels, rich lather, close finish.', duration: '30 min', tags: ['Straight Razor'], barber: 'Any' },
+    { icon: GiBeard, title: 'Beard Shape & Line-Up', price: 25, desc: 'Define lines, trim length, and condition for balance.', duration: '20 min', tags: ['Beard Oil'], barber: 'Any' },
+    { icon: LuSprayCan, title: 'Scalp Treatment', price: 28, desc: 'Deep cleanse and rejuvenation for a healthier scalp.', duration: '20 min', tags: ['Cooling Massage'], barber: 'Any' },
+    { icon: TbBlade, title: 'The Sharp Package', price: 65, desc: 'Cut + Beard + Hot Towel Shave. Complete refresh.', duration: '75 min', tags: ['Bundle'], barber: 'Senior' },
   ]
 
   const addons = [
-    { icon: FiDroplet, title: 'Hot Towel', price: 8, desc: 'Relaxing towel prep to soften and soothe.', duration: '+10 min' },
-    { icon: FiWind, title: 'Beard Oil Finish', price: 6, desc: 'Condition and shine for a clean finish.', duration: '+5 min' },
-    { icon: FiTag, title: 'Black Mask', price: 10, desc: 'Deep pore cleanse for a crisp complexion.', duration: '+10 min' },
+    { icon: PiTowelDuotone, title: 'Hot Towel', price: 8, desc: 'Relaxing towel prep to soften and soothe.', duration: '+10 min' },
+    { icon: GiHeartBottle, title: 'Beard Oil Finish', price: 6, desc: 'Condition and shine for a clean finish.', duration: '+5 min' },
+    { icon: PiMaskHappyFill, title: 'Black Mask', price: 10, desc: 'Deep pore cleanse for a crisp complexion.', duration: '+10 min' },
   ]
 
   const categories = [

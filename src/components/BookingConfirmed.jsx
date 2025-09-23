@@ -1,13 +1,15 @@
 import React, { useMemo } from 'react'
+import { v4 as uuidv4 } from 'uuid'
+import QRCode from 'react-qr-code'
 import { FiCalendar, FiDownload, FiMapPin, FiPhone } from 'react-icons/fi'
 
 export default function BookingConfirmed({
-  confirmationId = 'TSL-8F29C',
+  confirmationId,          // optional: if not provided we auto-generate
   service,                 // { name, price, duration }
-  selectedDate,           // Date|null
-  selectedTime,           // string|null
-  selectedBarber,         // { id, name }|null
-  totalPaid,              // number | undefined -> falls back to service.price
+  selectedDate,            // Date|null
+  selectedTime,            // string|null
+  selectedBarber,          // { id, name }|null
+  totalPaid,               // number | undefined -> falls back to service.price
   address = '221 King St, Suite 3',
   parking = 'Street & lot available',
   onAddToCalendar,
@@ -16,6 +18,12 @@ export default function BookingConfirmed({
   onContactShop,
   phone = '(555) 012-3456',
 }) {
+  // Generate a stable ID once per mount if not provided
+  const id = useMemo(
+    () => confirmationId || `TSL-${uuidv4().slice(0, 8).toUpperCase()}`,
+    [confirmationId]
+  )
+
   const dateLabel = useMemo(
     () =>
       selectedDate
@@ -30,6 +38,22 @@ export default function BookingConfirmed({
 
   const total = typeof totalPaid === 'number' ? totalPaid : service?.price ?? 0
 
+  // Encode appointment details for scanning at check-in
+  const qrPayload = useMemo(
+    () =>
+      JSON.stringify({
+        id,
+        service: service?.name || null,
+        duration: service?.duration || null,
+        date: selectedDate?.toISOString?.() || null,
+        time: selectedTime || null,
+        barber: selectedBarber?.name || null,
+        price: total,
+        v: 1,
+      }),
+    [id, service, selectedDate, selectedTime, selectedBarber, total]
+  )
+
   return (
     <div className="row g-3">
       {/* Left: appointment summary + location */}
@@ -40,7 +64,7 @@ export default function BookingConfirmed({
           <div className="details-list">
             <div className="detail-box">
               <div className="detail-label">Confirmation #</div>
-              <div className="detail-value">{confirmationId}</div>
+              <div className="detail-value">{id}</div>
             </div>
             <div className="detail-box">
               <div className="detail-label">Service</div>
@@ -103,7 +127,13 @@ export default function BookingConfirmed({
           <div className="summary-head">Your check-in</div>
 
           <div className="qr-box" role="img" aria-label="Appointment QR code">
-            <div className="qr-placeholder" />
+            <QRCode
+              value={qrPayload}
+              size={168}
+              style={{ width: '100%', height: 'auto' }}
+              bgColor="#ffffff"
+              fgColor="#111111"
+            />
           </div>
           <p className="qr-caption">Show this QR at the front desk for faster check‑in.</p>
 

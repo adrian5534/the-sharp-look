@@ -85,7 +85,7 @@ export default function Footer() {
         <div className="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between gap-3 text-white-50 small">
           <div className="d-flex flex-column gap-1">
             <span>© {year} The Sharp Look. All rights reserved.</span>
-            <span className="footer-credits">Credits: Adrian Reynolds  |  Powered by YSB Academy</span>
+            <span className="footer-credits">Credits: Adrian Reynolds  |  Powered by YSB Academy LLC</span>
           </div>
           <nav aria-label="Legal">
             <ul className="nav gap-3">
