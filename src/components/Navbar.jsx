@@ -14,8 +14,8 @@ export default function Navbar() {
                 className="brand-logo"
                 src="/images/logo.png"
                 alt=""
-                width={28}
-                height={28}
+                width={"60px"}
+                height={"60px"}
                 loading="eager"
                 decoding="async"
               />

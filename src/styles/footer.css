@@ -4,7 +4,21 @@
   color: var(--color-white);
 }
 
-/* Brand */
+/* Brand (logo-based) */
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+}
+.footer-logo {
+  width: 62px;
+  height: 62px;       /* remove if you don't want a circular logo */
+  object-fit: contain;        /* use 'contain' if your logo needs full fit */
+  display: block;
+}
+.brand-blurb { color: rgba(255,255,255,0.8); }
+
+/* (Legacy) icon brand support — safe to keep if used elsewhere */
 .brand-icon {
   width: 28px;
   height: 28px;
@@ -13,7 +27,9 @@
   color: var(--color-cta);
 }
 .brand-icon svg { width: 100%; height: 100%; }
-.brand-blurb { color: rgba(255,255,255,0.8); }
+
+/* Section titles */
+.footer-title { margin: 0; }
 
 /* Links on dark background */
 .site-footer a {

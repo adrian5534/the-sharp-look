@@ -1,4 +1,4 @@
-import { FiScissors, FiPhone, FiMapPin, FiMail, FiInstagram, FiFacebook } from 'react-icons/fi'
+import { FiPhone, FiMapPin, FiMail, FiInstagram, FiFacebook } from 'react-icons/fi'
 import '../styles/footer.css'
 
 export default function Footer() {
@@ -10,8 +10,16 @@ export default function Footer() {
         <div className="row gy-5 gx-lg-4 align-items-start">
           {/* Brand + blurb */}
           <div className="col-12 col-lg-4">
-            <div className="d-inline-flex align-items-center gap-2 mb-1">
-              <span className="brand-icon" aria-hidden="true"><FiScissors /></span>
+            <div className="d-inline-flex align-items-center gap-2 mb-1 footer-brand">
+              <img
+                className="footer-logo"
+                src="/images/logo.png"
+                alt="The Sharp Look"
+                width={36}
+                height={36}
+                loading="lazy"
+                decoding="async"
+              />
               <span className="fw-bold fs-5">The Sharp Look</span>
             </div>
             <p className="brand-blurb mb-3">

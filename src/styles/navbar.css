@@ -7,16 +7,15 @@
 
 /* Brand */
 .brand-icon {
-  width: 28px;
-  height: 28px;
+  width: 68px;
+  height: 68px;
   display: grid;
   place-items: center;
 }
 .brand-icon img.brand-logo {
   width: 100%;
   height: 100%;
-  object-fit: cover;       /* use 'contain' if you prefer full logo fit */
-  border-radius: 50%;      /* remove if your logo shouldn’t be circular */
+  object-fit: contain;       /* use 'contain' if you prefer full logo fit */     /* remove if your logo shouldn’t be circular */
 }
 .brand-name {
   color: var(--color-white);
